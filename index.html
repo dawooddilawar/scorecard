@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Basketball Scorecard</title>
+	<link rel="stylesheet" type="text/css" href="./styles.css">
+</head>
+<body>
+	<div class="container">
+		<div class="counter-container">
+			<span class="title">HOME</span>
+			<div class="counter" id="home--score">
+				0
+			</div>
+			<div class="add-score">
+				<button class="button" id="home__add-1" onclick="addHomeScore(1)">
+					+1
+				</button>
+				<button class="button" id="home__add-2" onclick="addHomeScore(2)">
+					+2
+				</button>
+				<button class="button" id="home__add-3" onclick="addHomeScore(3)">
+					+3
+				</button>
+				<button class="button" id="home__reset" onclick="resetHomeScore()">
+					RESET
+				</button>
+			</div>
+		</div>
+		<div class="counter-container">
+			<span class="title">GUEST</span>
+			<div class="counter" id="guest--score">
+				0
+			</div>
+			<div class="add-score">
+				<button class="button" id="guest__add-1" onclick="addGuestScore(1)">
+					+1
+				</button>
+				<button class="button" id="guest__add-2" onclick="addGuestScore(2)">
+					+2
+				</button>
+				<button class="button" id="guest__add-3" onclick="addGuestScore(3)">
+					+3
+				</button>
+				<button class="button" id="guest__reset" onclick="resetGuestScore()">
+					RESET
+				</button>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
+
+<script type="text/javascript">
+	function addHomeScore(score) {
+		currentScoreEl = document.getElementById("home--score");
+		currentScore = Number(currentScoreEl.innerText);
+		currentScoreEl.innerText = currentScore + score;
+	}
+
+	function resetHomeScore() {
+		currentScoreEl = document.getElementById("home--score");
+		currentScoreEl.innerText = 0;
+	}
+
+	function addGuestScore(score) {
+		currentScoreEl = document.getElementById("guest--score");
+		currentScore = Number(currentScoreEl.innerText);
+		currentScoreEl.innerText = currentScore + score;
+	}
+
+	function resetGuestScore() {
+		currentScoreEl = document.getElementById("guest--score");
+		currentScoreEl.innerText = 0;
+	}
+</script>
